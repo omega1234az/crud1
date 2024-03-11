@@ -32,7 +32,7 @@
         </tbody>
       </table>
       <EditModal v-if="showEditModal" @close="showEditModal = false; fetchUsers()" :user="editedUser" />
-      <button @click="showRegisterModal = true" class="p-4 bg-green-300 text-center w-[50%] mx-auto">Register</button>
+      <button @click="showRegisterModal = true" class="p-4 bg-green-300 text-center w-full mx-auto">Add User</button>
       <RegisterModal :showModal.sync="showRegisterModal" @close="showRegisterModal = false; fetchUsers()" />
     </div>
   </div>
