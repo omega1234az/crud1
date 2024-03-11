@@ -87,6 +87,7 @@ export default {
             icon: 'success',
             timer: 3000
           });
+          this.$router.push('/login');
         }
       } catch (error) {
         Swal.fire({
