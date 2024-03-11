@@ -24,8 +24,8 @@
         </div>
       </div>
   
-      <div :class="menuClasses" class="md:hidden">
-        <ul class="flex flex-col space-y-4 mt-2">
+      <div :class="menuClasses" class="md:hidden mx-4">
+        <ul class="flex flex-col space-y-3 p-2">
           <li><NuxtLink to="/admin/edit" class="text-white">หน้าจัดการสมาชิก</NuxtLink></li>
           <li><NuxtLink to="/register" class="text-white">สมัครสมาชิก</NuxtLink></li>
           <li><NuxtLink to="/login" class="text-white">เข้าสู่ระบบ</NuxtLink></li>
