@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <div class="container w-[1000px] mx-auto mt-5 bg-slate-400">
-      <h1 class="text-center text-2xl font-bold mb-5">CRUD Ex1</h1>
-      <table
-        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border border-solid bg-white table-auto">
+  <div class="container mx-auto">
+    <h1 class="text-center text-2xl font-bold mb-5">CRUD Ex1</h1>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border border-solid bg-white table-auto">
         <thead class="text-xl text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th class="px-5">ID</th>
@@ -31,12 +30,14 @@
           </tr>
         </tbody>
       </table>
-      <EditModal v-if="showEditModal" @close="showEditModal = false; fetchUsers()" :user="editedUser" />
-      <button @click="showRegisterModal = true" class="p-4 bg-green-300 text-center w-full mx-auto">Add User</button>
-      <RegisterModal :showModal.sync="showRegisterModal" @close="showRegisterModal = false; fetchUsers()" />
     </div>
+    <EditModal v-if="showEditModal" @close="showEditModal = false; fetchUsers()" :user="editedUser" />
+    <button @click="showRegisterModal = true" class="p-4 bg-green-300 text-center w-full mt-4">Add User</button>
+    <RegisterModal :showModal.sync="showRegisterModal" @close="showRegisterModal = false; fetchUsers()" />
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -116,5 +117,52 @@ created() {
 </script>
 
 <style scoped>
-/* Add any custom styling */
+.container {
+  max-width: 700px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding for visual appeal */
+}
+
+table {
+  width: 100%; /* Ensure the table fills the container width */
+}
+
+td, th {
+  /* Adjust font size and padding for better readability on smaller screens */
+  font-size: 0.8rem;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  /* Media query for screens narrower than 768px */
+
+  /* Adjust table layout for optimal display on mobile devices */
+  table {
+    display: block;
+  }
+
+  thead tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    flex: 1;
+  }
+
+  td {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    /* Hide the last separator for a clean look */
+    border-right: 1px solid #ddd;
+  }
+}
+
 </style>
