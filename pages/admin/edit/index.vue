@@ -63,7 +63,7 @@ export default {
 
     if (result.value) {
       try {
-        const response = await fetch(`http://localhost:5000/user/${id}`, {
+        const response = await fetch(`https://odd-gold-chipmunk-tutu.cyclic.app/user/${id}`, {
           method: 'DELETE',
         });
 
@@ -97,7 +97,7 @@ export default {
 
   async fetchUsers() {
     try {
-      const response = await fetch('http://localhost:5000/user/data');
+      const response = await fetch('https://odd-gold-chipmunk-tutu.cyclic.app/user/data');
       if (!response.ok) {
         throw new Error('เกิดข้อผิดพลาดในการเรียกข้อมูล');
       }

@@ -44,7 +44,7 @@ export default {
   methods: {
     async saveUser() {
       try {
-        const response = await fetch(`http://localhost:5000/user/${this.editedUser._id}`, {
+        const response = await fetch(`https://odd-gold-chipmunk-tutu.cyclic.app/user/${this.editedUser._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
